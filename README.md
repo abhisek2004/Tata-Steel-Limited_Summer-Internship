@@ -75,6 +75,95 @@ In this project, I developed a **complete digital learning management system (LM
 
 ---
 
+Here's a complete, step-by-step guide on **how to run the frontend** of your Tata Steel Learning & Development platform locally, written in a clean, developer-friendly format — only for the **frontend (React + Next.js + TypeScript)** setup. ✅
+
+---
+
+## 🚀 How to Run the Frontend Locally
+
+> ⚙️ Tech Stack: React.js, Next.js, TypeScript
+> 📦 Package Manager: npm
+> 🧠 Note: Make sure Node.js is installed (Recommended: Node v16+)
+
+---
+
+### 🔧 Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+---
+
+### 📦 Step 2: Install Dependencies (Handle Peer Deps Issues)
+
+```bash
+npm install --legacy-peer-deps
+```
+
+> 🔍 This command installs all the required node modules while ignoring peer dependency conflicts (which may occur with packages like React 18, Tailwind, etc.).
+
+---
+
+### 🛠️ Step 3: Install Additional Dependency (react-is)
+
+```bash
+npm install react-is
+```
+
+> ✅ This package is often needed by libraries like `react-dom`, `formik`, or other React utility tools.
+
+---
+
+### 🏗️ Step 4: Build the Application
+
+```bash
+npm run build
+```
+
+> 🧱 This will compile the Next.js project for production. It performs static optimization, transpiles TypeScript/JSX, and prepares everything in the `.next` folder.
+
+---
+
+### 🌐 Step 5: Start the Development Server
+
+```bash
+npm run dev
+```
+
+> 🖥️ This launches your frontend at:
+> `http://localhost:3000`
+> Open it in your browser to view the app.
+
+---
+
+### ✅ Output
+
+Once it's running, you should see your **Tata Steel L\&D Platform homepage**, complete with:
+
+- 📚 Course modules
+- 👤 User dashboard
+- 🎓 Registration & Certificate section
+- 📥 Learning content and resources
+
+---
+
+### ⚠️ Common Tips
+
+- If the server fails to start, delete `node_modules` and `package-lock.json`, then reinstall:
+
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install --legacy-peer-deps
+  ```
+
+- Use `.env.local` if you have environment variables (e.g., `NEXT_PUBLIC_API_URL`, etc.)
+
+---
+
+---
+
 ## 🛠️ How to Run Locally
 
 1. **Clone the Repository**
