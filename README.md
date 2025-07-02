@@ -350,7 +350,7 @@ Once the app is running, you’ll get:
 
 ## 📸 Screenshots (Coming Soon)
 
-> Will add UI/UX previews, certificate download page, and more...
+> Website previews,Demo certificate ....
 
 ---
 
