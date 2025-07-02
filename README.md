@@ -162,30 +162,189 @@ Once it's running, you should see your **Tata Steel L\&D Platform homepage**, co
 
 ---
 
+Here's a complete **step-by-step guide** to help you or any team member run the **Tata Steel Learning & Development Platform** — including both **frontend and backend**, with **MongoDB integration**. This also covers what to install on a fresh system and how to run the project locally. 👇
+
 ---
 
-## 🛠️ How to Run Locally
+# 🛠️ How to Run the Project (Frontend + Backend + Database)
 
-1. **Clone the Repository**
+> 💻 Platform Stack: React (Next.js), Node.js, Prisma, MongoDB
+> 🌐 Deployment-ready: Yes (Vercel + MongoDB Atlas)
 
-   ```bash
-   git clone https://github.com/abhisek2004/tata-steel-ld-platform.git
-   cd tata-steel-ld-platform
-   ```
+---
 
-2. **Install Dependencies**
+## ✅ What You Need to Download Before Running
 
-   ```bash
-   npm install
-   ```
+### 🔗 System Requirements
 
-3. **Start Development Server**
+| Tool          | Version (Recommended)     |
+| ------------- | ------------------------- |
+| Node.js       | v16+ or v18+              |
+| npm           | v7+                       |
+| Git           | Latest                    |
+| MongoDB Atlas | Free Tier / Local MongoDB |
+| Code Editor   | VS Code (Optional)        |
 
-   ```bash
-   npm run dev
-   ```
+---
 
-4. Access the app at `http://localhost:3000` 🚀
+## ⚙️ Step-by-Step: Setup & Run (Clean System)
+
+---
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/tata-steel-learning-platform.git
+cd tata-steel-learning-platform
+```
+
+---
+
+## 2️⃣ Install All Dependencies (Frontend + Backend Shared)
+
+```bash
+npm install --legacy-peer-deps
+npm install react-is
+```
+
+---
+
+## 3️⃣ Configure Environment Variables
+
+Create a `.env` file in the root directory and add your MongoDB URI like this:
+
+```env
+DATABASE_URL="mongodb+srv://<username>:<password>@cluster0.mongodb.net/tata-steel-learning?retryWrites=true&w=majority"
+```
+
+📌 Replace `<username>` and `<password>` with your MongoDB Atlas credentials.
+
+> 📖 Refer to [`MongoDB Setup Guide`](f) for step-by-step help.
+
+---
+
+## 4️⃣ Connect to MongoDB
+
+✅ Option A: If this is a fresh setup
+
+```bash
+npm run setup:mongodb
+```
+
+This will:
+
+* Generate Prisma client
+* Push schema to MongoDB
+* Seed initial data
+
+✅ Option B: If you're migrating from SQLite
+
+```bash
+npm run migrate:sqlite-to-mongodb
+```
+
+---
+
+## 5️⃣ Run Backend (API + DB Connectivity)
+
+This project uses **Next.js API routes**, so **you don’t need a separate Express server**.
+
+> The backend will automatically work when `npm run dev` is started from the root.
+
+---
+
+## 6️⃣ Start the Frontend (Local Dev Server)
+
+```bash
+npm run dev
+```
+
+Then visit [http://localhost:3000](http://localhost:3000) 🚀
+
+---
+
+## 🧪 Optional: Build for Production
+
+```bash
+npm run build
+```
+
+To preview a production build:
+
+```bash
+npm run start
+```
+
+---
+
+## 🛡️ JWT Authentication (for APIs)
+
+> JWT and NextAuth.js are both supported
+
+To test JWT APIs:
+
+```bash
+POST /api/auth/login
+```
+
+Pass JSON:
+
+```json
+{
+  "email": "admin@example.com",
+  "password": "your_password"
+}
+```
+
+Then use:
+
+```http
+Authorization: Bearer <your_token>
+```
+
+✅ Full docs here: [JWT Auth Guide](f)
+
+---
+
+## 📂 Useful Dev Commands
+
+| Command                           | Purpose                                    |
+| --------------------------------- | ------------------------------------------ |
+| `npm run dev`                     | Start dev server (frontend + backend)      |
+| `npm run build`                   | Build production build                     |
+| `npm run prisma:studio`           | GUI to manage database with Prisma         |
+| `npm run generate:client`         | Generate Prisma client after schema update |
+| `npm run check:connection-string` | Validate MongoDB string                    |
+
+---
+
+## 🔐 Prisma + MongoDB Structure
+
+* ORM: Prisma
+* Models: Users, Courses, Events, Modules
+* Auth: Role-based with JWT & session
+* DB: MongoDB Atlas (or local fallback)
+
+---
+
+## ✅ Final Output
+
+Once the app is running, you’ll get:
+
+* 🏠 Homepage with hero banner & navigation
+* 📚 Course listing + content + register & complete
+* 📅 Training calendar with Teams links
+* 📥 Downloadable handbooks, PDFs, Excel files
+* 🧑‍💼 Dashboard with progress tracking
+* 🧾 Certificate generation (after course/module completion)
+
+---
+
+## 🔄 Troubleshooting
+
+* Use `npm run check:mongodb-utilities` to confirm all setup
+* Ensure `.env` file is configured properly
+* Whitelist your IP in MongoDB Atlas
 
 ---
 
