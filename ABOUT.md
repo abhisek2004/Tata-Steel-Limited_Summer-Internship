@@ -133,6 +133,12 @@ Tata Steel fosters the future through:
 
 ---
 
+---
+
+📖 [Click here to read more about Tata Steel Kalinganagar](ABOUT.md)
+
+---
+
 ## 🔗 Related Resources
 
 📄 [Read Full Press Release on Tata Steel Phase II Inauguration](https://www.tatasteel.com/newsroom/press-releases/india/2025/tata-steel-inaugurates-phase-ii-expansion-of-kalinganagar-operations/)
