@@ -350,6 +350,11 @@ Once the app is running, you’ll get:
 
 ## 📸 Screenshots
 
+> Work Flow Diagram ....
+![tata steel](https://github.com/user-attachments/assets/14d8b528-7179-4abf-93f9-cc3e34b2eb69)
+
+---
+
 > Website previews,Demo certificate ....
 ![1](https://github.com/user-attachments/assets/870a77fc-5ea5-489b-ba2c-afaaf8a44b44)
 ![2](https://github.com/user-attachments/assets/6df93ac3-1de0-4a08-85db-2d58ecb2b044)
