@@ -138,3 +138,9 @@ We welcome contributions—whether improvements, fixes, or documentation!
 - Write clean, modular code.
 - Include comments and documentation.
 - Add or update tests where relevant.
+
+---
+
+📖 [Click here to read more about Tata Steel Kalinganagar](ABOUT.md)
+
+---

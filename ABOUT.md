@@ -133,11 +133,6 @@ Tata Steel fosters the future through:
 
 ---
 
----
-
-📖 [Click here to read more about Tata Steel Kalinganagar](ABOUT.md)
-
----
 
 ## 🔗 Related Resources
 
