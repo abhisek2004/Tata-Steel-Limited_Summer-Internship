@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 220 70% 40%; /* Modern Deep Blue */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 20% 90%; /* Light, Cool Gray-Blue */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 220 20% 90%; /* Light, Cool Gray-Blue */
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 220 30% 85%; /* Slightly more saturated light blue */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 70% 40%; /* Modern Deep Blue */
+    --radius: 0.5rem;
+
+    /* Custom colors for Tata Steel theme (original values, as they are specific brand blues) */
+    --steel-blue-dark: 217 80% 20%;
+    --steel-blue-medium: 217 70% 35%;
+    --steel-blue-light: 217 60% 50%;
+    --steel-gray: 220 10% 70%;
+    --steel-red: 0 80% 50%;
+    --steel-gold: 40 100% 50%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 220 70% 60%; /* Lighter Modern Blue for dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 20% 17.5%; /* Darker Cool Gray-Blue */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 20% 17.5%; /* Darker Cool Gray-Blue */
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 220 30% 17.5%; /* Darker Muted Blue */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 17.5%; /* Darker Cool Gray-Blue */
+    --input: 220 20% 17.5%; /* Darker Cool Gray-Blue */
+    --ring: 220 70% 60%; /* Lighter Modern Blue for dark mode */
+
+    /* Custom colors for Tata Steel theme in dark mode (original values) */
+    --steel-blue-dark: 217 80% 80%;
+    --steel-blue-medium: 217 70% 70%;
+    --steel-blue-light: 217 60% 60%;
+    --steel-gray: 220 10% 30%;
+    --steel-red: 0 80% 70%;
+    --steel-gold: 40 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
