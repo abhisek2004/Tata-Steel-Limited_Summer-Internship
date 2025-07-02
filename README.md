@@ -233,9 +233,9 @@ npm run setup:mongodb
 
 This will:
 
-* Generate Prisma client
-* Push schema to MongoDB
-* Seed initial data
+- Generate Prisma client
+- Push schema to MongoDB
+- Seed initial data
 
 ✅ Option B: If you're migrating from SQLite
 
@@ -320,10 +320,10 @@ Authorization: Bearer <your_token>
 
 ## 🔐 Prisma + MongoDB Structure
 
-* ORM: Prisma
-* Models: Users, Courses, Events, Modules
-* Auth: Role-based with JWT & session
-* DB: MongoDB Atlas (or local fallback)
+- ORM: Prisma
+- Models: Users, Courses, Events, Modules
+- Auth: Role-based with JWT & session
+- DB: MongoDB Atlas (or local fallback)
 
 ---
 
@@ -331,20 +331,20 @@ Authorization: Bearer <your_token>
 
 Once the app is running, you’ll get:
 
-* 🏠 Homepage with hero banner & navigation
-* 📚 Course listing + content + register & complete
-* 📅 Training calendar with Teams links
-* 📥 Downloadable handbooks, PDFs, Excel files
-* 🧑‍💼 Dashboard with progress tracking
-* 🧾 Certificate generation (after course/module completion)
+- 🏠 Homepage with hero banner & navigation
+- 📚 Course listing + content + register & complete
+- 📅 Training calendar with Teams links
+- 📥 Downloadable handbooks, PDFs, Excel files
+- 🧑‍💼 Dashboard with progress tracking
+- 🧾 Certificate generation (after course/module completion)
 
 ---
 
 ## 🔄 Troubleshooting
 
-* Use `npm run check:mongodb-utilities` to confirm all setup
-* Ensure `.env` file is configured properly
-* Whitelist your IP in MongoDB Atlas
+- Use `npm run check:mongodb-utilities` to confirm all setup
+- Ensure `.env` file is configured properly
+- Whitelist your IP in MongoDB Atlas
 
 ---
 
@@ -353,33 +353,6 @@ Once the app is running, you’ll get:
 > Will add UI/UX previews, certificate download page, and more...
 
 ---
-
-## 🤝 Contribution
-
-We welcome contributions—whether improvements, fixes, or documentation!
-
-### How to Contribute
-
-1. **Fork** this repository.
-2. **Clone** your fork:
-   ```bash
-   git clone https://github.com/<your-username>/Tata‑Steel‑Limited_Summer‑Internship.git
-   cd Tata‑Steel‑Limited_Summer‑Internship
-   ```
-3. **Create a branch** for your feature or fix:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-4. **Make changes & commit**:
-   ```bash
-   git add .
-   git commit -m "Add: description of changes"
-   ```
-5. **Push to your branch**:
-   ```bash
-   git push origin feature/your-feature
-   ```
-6. **Open a Pull Request** targeting the `main` branch.
 
 #### Guidelines
 
