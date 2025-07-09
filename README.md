@@ -412,13 +412,6 @@ Request Body:
 
 ---
 
-
-
-
-Absolutely, Abhisek! Here's how you can **professionally describe** the deployment process of your Tata Steel Learning & Development Platform to **Vercel** — feel free to use this in your **README**, documentation, or internship report:
-
----
-
 ## 🌐 Deployment Summary: Tata Steel Learning Platform on Vercel
 
 I have successfully deployed the **Tata Steel Learning & Development Platform** using **Vercel** for hosting the frontend and serverless backend, along with **MongoDB Atlas** for the database. Here's a summary of how I deployed the full-stack application:
@@ -474,7 +467,7 @@ I have successfully deployed the **Tata Steel Learning & Development Platform** 
    * Verified live app at:
 
      ```
-     https://<your-vercel-project>.vercel.app
+     https://tatasteel-ld.vercel.app/
      ```
    * Tested API routes, authentication, course content, and PDF downloads.
    * Connected frontend UI with backend logic and real database content.
@@ -490,31 +483,6 @@ I have successfully deployed the **Tata Steel Learning & Development Platform** 
 * **CI/CD**: GitHub + Vercel Auto Deploy on push to `main`
 
 ---
-
-### 🔐 Optional Enhancements I Can Add Next
-
-* Custom Domain Integration (`learn.tatasteel.in`)
-* GitHub Actions for CI/CD
-* JWT-based API protection and middleware roles
-* Admin panel with real-time course & user analytics
-
----
-
-> This structured deployment ensures **scalability**, **security**, and **developer-friendly CI/CD integration**, making the Tata Steel LMS a production-grade learning solution.
-
-Let me know if you'd like this as a downloadable PDF guide or want a GitHub Action added for auto-seeding and deployments! 🚀
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## 📸 Screenshots
 
@@ -549,15 +517,6 @@ Let me know if you'd like this as a downloadable PDF guide or want a GitHub Acti
 ![21](https://github.com/user-attachments/assets/bbcaed98-2c5b-471d-8645-46c1f1351726)
 ![22](https://github.com/user-attachments/assets/811f9586-3e95-4cc0-9d63-ddd4cd81c476)
 ![23](https://github.com/user-attachments/assets/69ec53fb-b477-4056-bb22-d645e4608014)
-
-
----
-
-#### Guidelines
-
-- Write clean, modular code.
-- Include comments and documentation.
-- Add or update tests where relevant.
 
 ---
 
