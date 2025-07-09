@@ -1,0 +1,194 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String           @id @default(auto()) @map("_id") @db.ObjectId
+  name           String
+  email          String           @unique
+  password       String
+  phone          String?
+  department     String?
+  role           String?
+  resetToken     String?
+  resetTokenExpiry DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  courseProgress CourseProgress[]
+  pathProgress   PathProgress[]
+  certificates   Certificate[]
+  events         EventRegistration[]
+}
+
+model Course {
+  id             String           @id @default(auto()) @map("_id") @db.ObjectId
+  title          String
+  description    String
+  category       String
+  level          String
+  duration       String
+  modules        Int
+  objectives     String
+  curriculum     String
+  prerequisites  String
+  certification  String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  courseProgress CourseProgress[]
+  resources      Resource[]
+  pathCourses    PathCourse[]
+}
+
+model CourseProgress {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  progress  Float    @default(0)
+  status    String   @default("Not Started")
+  startedAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String   @db.ObjectId
+  courseId  String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+}
+
+model TrainingPath {
+  id           String         @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  slug         String         @unique
+  description  String
+  modules      Int
+  duration     String
+  objectives   String
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  pathProgress PathProgress[]
+  pathCourses  PathCourse[]
+  resources    Resource[]
+}
+
+model PathCourse {
+  id             String       @id @default(auto()) @map("_id") @db.ObjectId
+  pathId         String       @db.ObjectId
+  courseId       String       @db.ObjectId
+  order          Int
+  trainingPath   TrainingPath @relation(fields: [pathId], references: [id], onDelete: Cascade)
+  course         Course       @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([pathId, courseId])
+}
+
+model PathProgress {
+  id        String       @id @default(auto()) @map("_id") @db.ObjectId
+  progress  Float        @default(0)
+  status    String       @default("Not Started")
+  startedAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  userId    String       @db.ObjectId
+  pathId    String       @db.ObjectId
+  user      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  path      TrainingPath @relation(fields: [pathId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, pathId])
+}
+
+model TrainingModule {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  slug        String   @unique
+  description String
+  modules     Int
+  icon        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  resources   Resource[]
+}
+
+model Resource {
+  id               String          @id @default(auto()) @map("_id") @db.ObjectId
+  name             String
+  type             String
+  url              String?
+  courseId         String?         @db.ObjectId
+  pathId           String?         @db.ObjectId
+  moduleId         String?         @db.ObjectId
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  course           Course?         @relation(fields: [courseId], references: [id], onDelete: SetNull)
+  trainingPath     TrainingPath?   @relation(fields: [pathId], references: [id], onDelete: SetNull)
+  trainingModule   TrainingModule? @relation(fields: [moduleId], references: [id], onDelete: SetNull)
+}
+
+model Certificate {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  course    String
+  issueDate DateTime @default(now())
+  userId    String   @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Event {
+  id          String              @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  date        DateTime
+  time        String
+  location    String
+  description String
+  category    String
+  capacity    Int
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  registrations EventRegistration[]
+  materials   EventMaterial[]
+  speakers    EventSpeaker[]
+  agenda      EventAgenda[]
+}
+
+model EventRegistration {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  eventId   String   @db.ObjectId
+  userId    String   @db.ObjectId
+  createdAt DateTime @default(now())
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([eventId, userId])
+}
+
+model EventMaterial {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  url       String?
+  eventId   String   @db.ObjectId
+  createdAt DateTime @default(now())
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+model EventSpeaker {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  role      String
+  bio       String
+  eventId   String   @db.ObjectId
+  createdAt DateTime @default(now())
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+model EventAgenda {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  item      String
+  eventId   String   @db.ObjectId
+  order     Int
+  createdAt DateTime @default(now())
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
