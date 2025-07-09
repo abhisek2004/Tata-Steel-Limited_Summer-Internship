@@ -67,11 +67,8 @@ In this project, I developed a **complete digital learning management system (LM
 
 ---
 
-Sure Abhisek! Here's your complete setup guide **cleaned up, professionally formatted, and fully structured** — exactly as you asked. ✅ Nothing is removed, only properly arranged for clarity, professionalism, and easy reading.
 
----
-
-# 🧪 Tata Steel Learning & Development Platform – Setup Guide
+# 🧪 Setup Guide
 
 ---
 
@@ -414,21 +411,6 @@ Request Body:
 * If using MongoDB Atlas, whitelist your IP
 
 ---
-
-✅ **That’s it!** You’re now fully set up to run both the **frontend-only** or **full-stack version** of your Tata Steel Learning platform locally. Let me know if you'd like:
-
-* 🐳 Docker setup
-* 🧪 Unit test framework guide
-* 🌐 Vercel deployment instructions
-* 📄 PDF version of this entire guide
-
-I'm ready!
-
-
-
-
-
-
 
 
 
