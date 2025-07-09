@@ -65,6 +65,365 @@ In this project, I developed a **complete digital learning management system (LM
 - 📦 **Optimized Routing** – Faster load times via caching in Next.js
 - 🔒 **Access Control** – Basic authorization to restrict modules
 
+---
+
+Sure Abhisek! Here's your complete setup guide **cleaned up, professionally formatted, and fully structured** — exactly as you asked. ✅ Nothing is removed, only properly arranged for clarity, professionalism, and easy reading.
+
+---
+
+# 🧪 Tata Steel Learning & Development Platform – Setup Guide
+
+---
+
+## 🚧 Current Status
+
+* ✅ Frontend design fully implemented and deployed
+* 🔄 Backend integration with **Prisma & MongoDB** is in progress
+* 📈 More dashboard analytics and admin controls coming soon
+
+---
+
+## 🚀 How to Run the Frontend Locally
+
+> ⚙️ **Tech Stack:** React.js, Next.js, TypeScript
+> 📦 **Package Manager:** npm
+> 🧠 **Note:** Make sure Node.js is installed (Recommended: Node v16+)
+
+---
+
+## 📦 Getting Started
+
+### ✅ Prerequisites
+
+* **Node.js** ≥ 18
+* **npm / yarn / pnpm**
+* **MongoDB** (local or Atlas) or SQLite
+
+---
+
+## ✅ OPTION 1: Run Only the **Frontend (React + Next.js)**
+
+> Useful if:
+>
+> * You're working on UI development only
+> * You don’t need to interact with backend/database
+> * You're designing or testing frontend pages/components
+
+---
+
+### 🔧 Step-by-Step (Frontend Only)
+
+#### 1. 📥 Clone the Repo
+
+```bash
+git clone https://github.com/abhisek2004/Tata-Steel-Limited_Summer-Internship.git
+cd Tata-Steel-Limited_Summer-Internship
+```
+
+#### 2. 📦 Install Dependencies
+
+```bash
+npm install --legacy-peer-deps
+```
+
+#### 3. (Optional) Fix Peer Dependency Errors
+
+```bash
+npm install react-is
+```
+
+#### 4. 🔨 Build the App
+
+```bash
+npm run build
+```
+
+> 🔧 This compiles the frontend into `.next` folder for production-ready code.
+
+#### 5. ▶️ Run the Development Server
+
+```bash
+npm run dev
+```
+
+#### 6. 🌐 Visit Your App
+
+Open your browser at:
+
+```
+http://localhost:3000
+```
+
+---
+
+### ✅ What You’ll See:
+
+* 👤 Home Page with Tata Steel Branding
+* 📚 Course List
+* 🎓 Certificates UI
+* 📥 Downloadable Resources (if mocked)
+* 🌓 Dark Mode & Navbar
+* 🛠 Dashboard UI components (even without backend)
+
+> 🔹 **No backend required**, but API data will be unavailable or mocked.
+
+---
+
+## ✅ OPTION 2: Run **Frontend + Backend + Database (Full Stack)**
+
+> Required for:
+>
+> * 🔐 Authentication
+> * 📚 Real courses and progress tracking
+> * 📥 File Downloads (Resources)
+> * 🎓 Certificate generation
+> * 📊 Admin analytics
+
+---
+
+### ⚙️ Step-by-Step (Frontend + Backend + MongoDB)
+
+> ✅ Backend logic and MongoDB schema:
+> 🔗 [GitHub Repo](https://github.com/abhisek2004/Tata-Steel-Limited_Summer-Internship.git)
+
+---
+
+### 1️⃣ Clone the Full Stack Repo
+
+```bash
+git clone https://github.com/abhisek2004/Tata-Steel-Limited_Summer-Internship.git
+cd Tata-Steel-Limited_Summer-Internship
+```
+
+---
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install --legacy-peer-deps
+# OR
+yarn install
+```
+
+---
+
+### 3️⃣ Set Up Environment Variables
+
+Create a `.env` file in the root folder with:
+
+```env
+# MongoDB connection
+DATABASE_URL="mongodb://localhost:27017/tata-lms"
+
+# Next.js
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key"
+JWT_SECRET="your-jwt-secret"
+```
+
+> ⚠️ Use MongoDB Atlas URI if using cloud database.
+
+---
+
+### 4️⃣ Initialize MongoDB with Prisma
+
+```bash
+npx prisma generate
+npx prisma migrate dev --name init
+npx prisma db seed
+```
+
+> ✅ [View Prisma Schema](https://github.com/abhisek2004/Tata-Steel-Limited_Summer-Internship/blob/main/prisma/schema.prisma)
+
+---
+
+### 5️⃣ Run the Development Server
+
+```bash
+npm run dev
+```
+
+> Serves both **frontend** (React/Next.js) and **backend API** via `/api/*`.
+
+---
+
+### 6️⃣ Open Your Full Platform
+
+Visit:
+
+```
+http://localhost:3000
+```
+
+Now you'll see:
+
+* 🔐 Login / Register
+* 📚 Real course data
+* 📈 Dashboard analytics
+* 📥 PDF resource downloads
+* 🎓 Certificates
+* 📊 Admin reporting dashboard
+
+---
+
+## 🧠 Quick Commands Reference
+
+| Task                       | Command                              |
+| -------------------------- | ------------------------------------ |
+| 🛠 Install dependencies    | `npm install --legacy-peer-deps`     |
+| 🧪 DB setup (SQLite)       | `npx prisma migrate dev --name init` |
+| 🌱 Seed DB                 | `npx prisma db seed`                 |
+| 🚀 Run Dev Server          | `npm run dev`                        |
+| 🧱 Build for Production    | `npm run build`                      |
+| 🌐 Start Production Server | `npm start`                          |
+| 🔀 Switch DB               | `npm run switch:database`            |
+
+---
+
+## ✅ Final Tips
+
+* If install fails:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install --legacy-peer-deps
+```
+
+* For **download or CORS issues**, check the `/api/resources` route.
+* Use **MongoDB Compass** for GUI access to your database.
+
+---
+
+## 🗂️ Project Structure
+
+```
+├── app/                      # Pages & API (App Router)
+│   ├── api/                  # API routes
+│   ├── dashboard/            # User dashboard
+│   ├── courses/              # Course details & listing
+│   └── training-modules/     # Standalone learning units
+├── components/
+│   ├── course-dashboard-content.tsx
+│   ├── course-analytics.tsx
+│   ├── course-certificate.tsx
+│   └── ui/                   # Shared UI components
+├── hooks/                    # Custom React hooks
+├── lib/                      # Utility helpers
+│   ├── prisma.ts
+│   ├── auth-utils.ts
+│   └── download-utils.ts
+├── prisma/                   # Database schema and seeding
+├── public/                   # Static files (PDFs, images)
+├── styles/                   # Global & Tailwind styles
+├── tailwind.config.ts        # Tailwind config
+├── tsconfig.json             # TypeScript config
+├── package.json              # Scripts & dependencies
+└── README.md
+```
+
+---
+
+## 🧪 API Endpoints
+
+### 🔐 Authentication
+
+| Endpoint                  | Purpose                  |
+| ------------------------- | ------------------------ |
+| `/api/auth/[...nextauth]` | NextAuth internal routes |
+| `/api/auth/register`      | Register new user        |
+| `/api/auth/login`         | JWT-based login          |
+| `/api/auth/me`            | Get current user         |
+
+### 📚 Learning APIs
+
+| Endpoint                | Purpose                    |
+| ----------------------- | -------------------------- |
+| `/api/courses`          | Course management          |
+| `/api/training-paths`   | Structured learning paths  |
+| `/api/training-modules` | Short learning modules     |
+| `/api/events`           | Workshops and events       |
+| `/api/resources`        | PDFs, videos, handbooks    |
+| `/api/progress`         | User learning progress     |
+| `/api/certificates`     | Course/module certificates |
+
+### 📊 Analytics (Admin)
+
+| Endpoint         | Purpose                    |
+| ---------------- | -------------------------- |
+| `/api/dashboard` | User summary stats         |
+| `/api/analytics` | Admin-level insights       |
+| `/api/reports`   | Performance export reports |
+
+---
+
+## 📊 Database Schema (Simplified)
+
+* 👤 `User`
+* 📘 `Course`
+* 📈 `Progress`
+* 🧱 `TrainingModule`
+* 🧭 `TrainingPath`
+* 🎓 `Certificate`
+* 📂 `Resources`
+* 📅 `Events` + `Registrations`
+* 💬 `Discussions`
+
+---
+
+## 🔐 JWT Authentication (for APIs)
+
+Use JWT in header:
+
+```http
+Authorization: Bearer <your_token>
+```
+
+**Login API:**
+
+```http
+POST /api/auth/login
+```
+
+Request Body:
+
+```json
+{
+  "email": "admin@example.com",
+  "password": "your_password"
+}
+```
+
+---
+
+## 📂 Useful Dev Commands
+
+| Command                           | Purpose                                    |
+| --------------------------------- | ------------------------------------------ |
+| `npm run dev`                     | Start dev server (frontend + backend)      |
+| `npm run build`                   | Build for production                       |
+| `npm run prisma:studio`           | Open Prisma Studio UI                      |
+| `npm run generate:client`         | Generate Prisma client after schema update |
+| `npm run check:connection-string` | Validate MongoDB string                    |
+
+---
+
+## 🔄 Troubleshooting
+
+* Use `npm run check:mongodb-utilities` to confirm MongoDB setup
+* Verify `.env` file values
+* If using MongoDB Atlas, whitelist your IP
+
+---
+
+✅ **That’s it!** You’re now fully set up to run both the **frontend-only** or **full-stack version** of your Tata Steel Learning platform locally. Let me know if you'd like:
+
+* 🐳 Docker setup
+* 🧪 Unit test framework guide
+* 🌐 Vercel deployment instructions
+* 📄 PDF version of this entire guide
+
+I'm ready!
+
 
 
 
