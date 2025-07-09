@@ -372,26 +372,7 @@ Now you'll see:
 * 📅 `Events` + `Registrations`
 * 💬 `Discussions`
 
----
 
-## 📄 Docs & Guides
-
-* [📥 MongoDB Setup Guide](./MONGODB_SETUP_GUIDE.md)
-* [🔁 Migration: SQLite → MongoDB](./MONGODB_MIGRATION.md)
-* [🔐 JWT Auth Guide](./JWT_AUTH.md)
-* [🛠 MongoDB Troubleshooting](./MONGODB_TROUBLESHOOTING.md)
-
----
-
-## 🧠 Acknowledgements
-
-* ⚛️ [React.js](https://reactjs.org)
-* 🔼 [Next.js](https://nextjs.org)
-* 🌬️ [Tailwind CSS](https://tailwindcss.com)
-* 💾 [Prisma ORM](https://www.prisma.io/)
-* 🔐 [NextAuth.js](https://next-auth.js.org/)
-* 🧾 [jsPDF](https://github.com/parallax/jsPDF)
-* 🧩 [shadcn/ui](https://ui.shadcn.dev)
 
 
 
